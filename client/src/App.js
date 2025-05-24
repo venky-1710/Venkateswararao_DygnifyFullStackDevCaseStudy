@@ -191,7 +191,7 @@ const ClimateHazardAnalyzer = () => {
   // Update WebSocket effect to use the handler
   useEffect(() => {
     const connectWebSocket = () => {
-      const ws = new WebSocket('ws://localhost:8000/ws/analyze');
+      const ws = new WebSocket(process.env.REACT_APP_WS_URL);
       
       ws.onopen = () => {
         console.log('WebSocket Connected');
